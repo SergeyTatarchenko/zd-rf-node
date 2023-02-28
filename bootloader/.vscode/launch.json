@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "stm32f030-debug-openocd",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "target-build",
+            "runToEntryPoint": "main",
+            "executable": "bootloader.elf",
+            "device": "STM32F030C8T6",
+            "configFiles": [
+                "${workspaceRoot}/portable/STM32F030/openocd/stlink-v2-1.cfg",
+                "${workspaceRoot}/portable/STM32F030/openocd/stm32f0x.cfg"
+            ],
+            "svdFile": "${workspaceRoot}/portable/STM32F030/STM32F0xx.svd",
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 8000000,
+                "swoFrequency": 2000000,
+                "source": "probe",
+                "decoders": [
+                    { "type": "console", "label": "ITM", "port": 0 }
+                ]
+            }
+        }
+    ]
+}

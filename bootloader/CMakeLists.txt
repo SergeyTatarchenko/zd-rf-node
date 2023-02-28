@@ -30,7 +30,7 @@ target_link_libraries (${EXECUTABLE} stm32f030_startup)
 set(LINKER_SCRIPT  portable/STM32F030/STM32F030R8_FLASH.ld) 
 
 target_include_directories(${EXECUTABLE} PRIVATE
-        portable/include
+        portable/STM32F030/include
         )        
         
 target_compile_options(${EXECUTABLE} PRIVATE
