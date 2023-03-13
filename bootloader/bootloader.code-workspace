@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"stdint.h": "c",
+			"stdint-gcc.h": "c",
+			"stdbool.h": "c",
+			"flash.h": "c"
+		}
+	}
 }

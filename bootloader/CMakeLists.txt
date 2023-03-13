@@ -14,6 +14,7 @@ enable_language(C ASM)
 
 set(DIR_SRCS
         main.c
+        flash.c
 )
 
 set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")
@@ -31,8 +32,9 @@ set(LINKER_SCRIPT  portable/STM32F030/STM32F030R8_FLASH.ld)
 
 target_include_directories(${EXECUTABLE} PRIVATE
         portable/STM32F030/include
+        inc
         )        
-        
+
 target_compile_options(${EXECUTABLE} PRIVATE
         -mcpu=cortex-m0
         -mthumb
